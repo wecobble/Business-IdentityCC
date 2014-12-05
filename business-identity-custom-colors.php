@@ -26,6 +26,10 @@
  * @see     function add_control
  * @see     function add_setting
  * @see     function get_control
+ * @see     function get_theme_mod
+ * @see     function maybe_hash_hex_color
+ * @see     function sanitize_hex_color_no_hash
+ * @see     function sanitize_text_field
  * @see     function wp_get_theme
  * @since   1.0.0
  * @package Business_Identity_Custom_Colors
