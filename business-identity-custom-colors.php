@@ -226,7 +226,8 @@ endif;
 $current_theme          = wp_get_theme();
 $current_theme_name     = ! empty( $current_theme ) ? (string) $current_theme->Name : null;
 $current_theme_template = ! empty( $current_theme ) ? (string) $current_theme->Template : null;
-if ( 'Business Identity' === $current_theme_name || 'business-identity' === $current_theme_template ) :
+$current_theme_version  = ! empty( $current_theme ) ? (string) $current_theme->Version : null;
+if ( '2.0.0' <= $current_theme_version && ( 'Business Identity' === $current_theme_name || 'business-identity' === $current_theme_template ) ) :
 	add_action( 'customize_register', 'business_identity_custom_colors_customize_register', 11 );
 	add_action( 'wp_head', 'business_identity_customized_colors' );
 endif;
