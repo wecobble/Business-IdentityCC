@@ -15,7 +15,7 @@
  *  Plugin URI: https://creativemarket.com/professionalthemes/39756-Business-Identity-WordPress-Theme
  * Description: This plugin adds custom colors functionality into the Business Identity WordPress Theme.
  *      Author: Professional Themes
- *  Author URI: http://theme.wordpress.com/themes/by/professional-themes/
+ *  Author URI: https://creativemarket.com/professionalthemes
  *     Version: 1.0.0
  * Text Domain: business-identity-custom-colors
  * Domain Path: /languages/
