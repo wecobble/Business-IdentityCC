@@ -62,6 +62,8 @@ endif;
 
 // Customizer Registration
 function business_identity_custom_colors_customize_register( $wp_customize ) {
+	// Point users to Jetpack Custom CSS if they'd like more control over their colors
+	$wp_customize->get_section( 'colors' )->description = __( 'If you would like even more fine-grained control over your colors, take advantage of the Jetpack <a href="http://jetpack.me/support/custom-css/">Custom CSS</a> module.', 'business-identity-custom-colors' );
 	// Ensure that core controls are shown above Business Identity Custom Colors controls
 	$wp_customize->get_control( 'background_color' )->priority = 1;
 	$wp_customize->get_control( 'header_textcolor' )->priority = 2;
