@@ -16,7 +16,7 @@
  * Description: This plugin adds custom colors functionality into the Business Identity WordPress Theme.
  *      Author: Professional Themes
  *  Author URI: https://creativemarket.com/professionalthemes
- *     Version: 1.0.0
+ *     Version: 2.0.0
  * Text Domain: business-identity-custom-colors
  * Domain Path: /languages/
  *     License: GNU General Public License v2 or later
@@ -31,7 +31,7 @@
  * @see     function sanitize_hex_color_no_hash
  * @see     function sanitize_text_field
  * @see     function wp_get_theme
- * @since   1.0.0
+ * @since   2.0.0
  * @package Business_Identity_Custom_Colors
  */
 
