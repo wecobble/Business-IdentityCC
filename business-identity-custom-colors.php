@@ -120,9 +120,9 @@ if ( ! function_exists( 'business_identity_custom_colors_customize_register' ) )
 	} // end function business_identity_custom_colors_customize_register
 endif;
 
-if ( ! function_exists( 'business_identity_custom_colors' ) ) :
+if ( ! function_exists( 'business_identity_customized_colors' ) ) :
 	// Output custom colors
-	function business_identity_custom_colors() {
+	function business_identity_customized_colors() {
 		// Retrieve custom colors settings and also provide their rgb equivalents
 		$primary   = get_theme_mod( 'business_identity_primary_color' ); // Default: #352f48
 		$secondary = get_theme_mod( 'business_identity_secondary_color' ); // Default: #5c5379
@@ -219,7 +219,7 @@ if ( ! function_exists( 'business_identity_custom_colors' ) ) :
 				}
 			</style><?php
 		endif;
-	}// end function business_identity_custom_colors
+	}// end function business_identity_customized_colors
 endif;
 
 // Only proceed if Business Identity is in use.
@@ -228,5 +228,5 @@ $current_theme_name     = ! empty( $current_theme ) ? (string) $current_theme->N
 $current_theme_template = ! empty( $current_theme ) ? (string) $current_theme->Template : null;
 if ( 'Business Identity' === $current_theme_name || 'business-identity' === $current_theme_template ) :
 	add_action( 'customize_register', 'business_identity_custom_colors_customize_register', 11 );
-	add_action( 'wp_head', 'business_identity_custom_colors' );
+	add_action( 'wp_head', 'business_identity_customized_colors' );
 endif;
