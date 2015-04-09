@@ -62,7 +62,10 @@ if ( ! function_exists( 'business_identity_custom_colors_customize_register' ) )
 		$wp_customize->get_control( 'background_color' )->priority = 1;
 		$wp_customize->get_control( 'header_textcolor' )->priority = 2;
 
-		$wp_customize->add_setting( // Primary Color
+		/**
+		 * Main Accent Color
+		 */
+		$wp_customize->add_setting(
 			'business_identity_primary_color',
 			array(
 				'default'				=> '352f48',
@@ -73,12 +76,32 @@ if ( ! function_exists( 'business_identity_custom_colors_customize_register' ) )
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 			'business_identity_primary_color',
 			array(
-				'label'		=> __( 'Primary Color', 'business-identity-custom-colors' ),
+				'label'		=> __( 'Main Accent Background', 'business-identity-custom-colors' ),
 				'section'	=> 'colors',
 				'priority'	=> 100,
 			)
 		) );
-		$wp_customize->add_setting( // Secondary Color
+		$wp_customize->add_setting(
+			'business_identity_main_accent_txt_color',
+			array(
+				'default'				=> 'ff0000',
+				'sanitize_callback'		=> 'sanitize_hex_color_no_hash',
+				'sanitize_js_callback'	=> 'maybe_hash_hex_color',
+			)
+		);
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
+			'business_identity_main_accent_txt_color',
+			array(
+				'label'		=> __( 'Main Accent Text', 'business-identity-custom-colors' ),
+				'section'	=> 'colors',
+				'priority'	=> 100,
+			)
+		) );
+
+		/**
+		 * Secondary Accent Color
+		 */
+		$wp_customize->add_setting(
 			'business_identity_secondary_color',
 			array(
 				'default'				=> '5c5379',
@@ -89,12 +112,32 @@ if ( ! function_exists( 'business_identity_custom_colors_customize_register' ) )
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 			'business_identity_secondary_color',
 			array(
-				'label'		=> __( 'Secondary Color', 'business-identity-custom-colors' ),
+				'label'		=> __( 'Secondary Accent Background', 'business-identity-custom-colors' ),
 				'section'	=> 'colors',
 				'priority'	=> 101,
 			)
 		) );
-		$wp_customize->add_setting( // Links
+		$wp_customize->add_setting(
+			'business_identity_secondary_accent_txt_color',
+			array(
+				'default'				=> 'ff0000',
+				'sanitize_callback'		=> 'sanitize_hex_color_no_hash',
+				'sanitize_js_callback'	=> 'maybe_hash_hex_color',
+			)
+		);
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
+			'business_identity_secondary_accent_txt_color',
+			array(
+				'label'		=> __( 'Secondary Accent Text', 'business-identity-custom-colors' ),
+				'section'	=> 'colors',
+				'priority'	=> 101,
+			)
+		) );
+
+		/**
+		 * Links
+		 */
+		$wp_customize->add_setting(
 			'business_identity_links_color',
 			array(
 				'default'				=> '7b65c7',
@@ -117,11 +160,15 @@ if ( ! function_exists( 'business_identity_customized_colors' ) ) :
 	// Output custom colors
 	function business_identity_customized_colors() {
 		// Retrieve custom colors settings and also provide their rgb equivalents
-		$primary   = get_theme_mod( 'business_identity_primary_color' ); // Default: #352f48
-		$secondary = get_theme_mod( 'business_identity_secondary_color' ); // Default: #5c5379
-		$links     = get_theme_mod( 'business_identity_links_color' ); // Default: #7b65c7
+		$primary       = get_theme_mod( 'business_identity_primary_color' );
+		$primary_txt   = get_theme_mod( 'business_identity_main_accent_txt_color' );
+		$secondary     = get_theme_mod( 'business_identity_secondary_color' );
+		$secondary_txt = get_theme_mod( 'business_identity_secondary_accent_txt_color' );
+		$links         = get_theme_mod( 'business_identity_links_color' );
 
-		// Primary Color
+		/**
+		 * Main Accent
+		 */
 		if ( ! empty( $primary ) && '352f48' != $primary ) :
 			$primary_hex = business_identity_custom_colors_hex_to_rgb( $primary ); ?>
 			<style type="text/css">
@@ -156,8 +203,15 @@ if ( ! function_exists( 'business_identity_customized_colors' ) ) :
 				}
 			</style><?php
 		endif;
+		if ( ! empty( $primary_txt ) && 'ff0000' != $primary_txt ) :
+			$primary_hex = business_identity_custom_colors_hex_to_rgb( $primary_txt ); ?>
+			<style type="text/css">
+			</style><?php
+		endif;
 
-		// Secondary Color
+		/**
+		 * Secondary Accent
+		 */
 		if ( ! empty( $secondary ) && '5c5379' != $secondary ) : ?>
 			<style type="text/css">
 				#hero,
@@ -183,8 +237,15 @@ if ( ! function_exists( 'business_identity_customized_colors' ) ) :
 				}
 			</style><?php
 		endif;
+		if ( ! empty( $secondary_txt ) && 'ff0000' != $secondary_txt ) :
+			$primary_hex = business_identity_custom_colors_hex_to_rgb( $secondary_txt ); ?>
+			<style type="text/css">
+			</style><?php
+		endif;
 
-		// Links
+		/**
+		 * Links
+		 */
 		if ( ! empty( $links ) && '7b65c7' != $links ) : ?>
 			<style type="text/css">
 				a,
