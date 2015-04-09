@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     'git-archive': {
       archive: {
         options: {
-          'output': 'releases/<%= pkg.name %>-<%= pkg.version %>.zip',
+          'output': 'releases/<%= pkg.name %>.zip',
           'tree-ish': 'master',
           'worktree-attributes': true,
           'extra': 9,
