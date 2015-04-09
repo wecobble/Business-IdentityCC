@@ -1,0 +1,28 @@
+{
+  "name": "business-identity-custom-colors",
+  "author": {
+    "name": "Professional Themes",
+    "url": "http://professionalthemes.nyc/"
+  },
+  "description": "This plugin adds custom colors functionality into the Business Identity WordPress Theme.",
+  "version": "3.0.0",
+  "license": "GPLv2 or later",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-git-archive": "0.0.3",
+    "grunt-wp-i18n": "^0.5.1",
+    "matchdep": "^0.3.0",
+    "time-grunt": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:professionalthemes/business-identity-custom-colors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/professionalthemes/business-identity-custom-colors/issues"
+  },
+  "private": true,
+  "dependencies": {
+    "matchdep": "^0.3.0"
+  }
+}
