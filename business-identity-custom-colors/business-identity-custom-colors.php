@@ -1,14 +1,7 @@
 <?php
 /**
  * This plugin is intended to be used as a custom colors add-on to the Business Identity WordPress Theme.
- * The reason custom colors have been moved into a plugin for Business Identity is because the self-hosted
- * version of the theme that is available through Creative Market and the hosted version that is
- * available through WordPress.com are now completely in sync. WordPress.com contains its own custom colors
- * functionality, so we cannot ship custom colors directly in the theme if we want to maintain parity between
- * both environments.
- *
- * This plugin will be of no use if you have not purchased the self-hosted version of Business Identity
- * through Creative Market.
+ * It will be of no use if you have not purchased the self-hosted version of Business Identity.
  *
  * @wordpress-plugin
  * Plugin Name: Business Identity Custom Colors
